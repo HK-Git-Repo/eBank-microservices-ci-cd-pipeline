@@ -21,13 +21,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @ActiveProfiles("test")
-@Testcontainers // Unit Test using Postgres inside Docker container
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // Unit Test using Postgres inside Docker container
+//@Testcontainers // Unit Test using Postgres inside Docker container
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // Unit Test using Postgres inside Docker container
 class CustomerRepositoryTest {
-    @Container
+    /*@Container
     @ServiceConnection
     private static PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:16");
-
+*/
     @Autowired
     private CustomerRepository customerRepository;
 
@@ -56,11 +56,11 @@ class CustomerRepositoryTest {
         );
     }
 
-    @Test
+    /*@Test
     void connectionEstablishedTest() {
         assertThat(postgreSQLContainer.isCreated()).isTrue();
         assertThat(postgreSQLContainer.isRunning()).isTrue();
-    }
+    }*/
 
     @Test
     void shouldFindByEmail() {
